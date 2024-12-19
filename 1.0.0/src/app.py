@@ -61,19 +61,6 @@ class Email(AppBase):
         super().__init__(redis, logger, console_logger)
 
     # This is an email function of Shuffle
-    def send_email_shuffle(self, apikey, recipients, subject, body):
-        targets = [recipients]
-        if ", " in recipients:
-            targets = recipients.split(", ")
-        elif "," in recipients:
-            targets = recipients.split(",")
-
-        data = {"targets": targets, "body": body, "subject": subject, "type": "alert", "email_app": True}
-
-        url = "https://shuffler.io/functions/sendmail"
-        headers = {"Authorization": "Bearer %s" % apikey}
-        return requests.post(url, headers=headers, json=data).text
-
     def send_email_smtp(self, smtp_host, recipient, subject, body, smtp_port, attachments="", username="", password="", ssl_verify="True", body_type="html", cc_emails=""):
         self.logger.info("Sending email to %s with subject %s" % (recipient, subject))
         if type(smtp_port) == str:
