@@ -1,4 +1,4 @@
-# Mail
+# Mail App
 This apps is used to interact with SMTP, IMAP and contains other basic email tools
 
 ## eml parsing
@@ -18,3 +18,7 @@ Date: Thu, 24 Mar 2022 11:29:16
 
 Welcome to this example email. What a lovely day
 ```
+----------
+
+This is a modified copy email application from Shuffle
+https://github.com/Shuffle/python-apps
