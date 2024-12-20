@@ -49,7 +49,7 @@ def default(o):
 
 class Email(AppBase):
     __version__ = "1.0.0"
-    app_name = "email"
+    app_name = "email-app"
 
     def __init__(self, redis, logger, console_logger=None):
         """
@@ -60,7 +60,6 @@ class Email(AppBase):
         """
         super().__init__(redis, logger, console_logger)
 
-    # This is an email function of Shuffle
     def send_email_smtp(self, smtp_host, recipient, subject, body, smtp_port, attachments="", username="", password="", ssl_verify="True", body_type="html", cc_emails=""):
         self.logger.info("Sending email to %s with subject %s" % (recipient, subject))
         if type(smtp_port) == str:
