@@ -77,6 +77,15 @@ actions:
         required: false
         schema:
           type: string
+      - name: body_type 
+        description: The type of body to send. HTML by default
+        example: "html"
+        required: false 
+        options:
+          - "html"
+          - "plain"
+        schema:
+          type: string
       - name: ssl_verify 
         description: Whether to use TLS or not
         example: "true"
@@ -84,15 +93,6 @@ actions:
         options:
           - true
           - false
-        schema:
-          type: string
-      - name: body_type 
-        description: The type of body to send. HTML by default
-        example: "true"
-        required: false 
-        options:
-          - "html"
-          - "plain"
         schema:
           type: string
     returns:
