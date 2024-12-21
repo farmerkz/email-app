@@ -18,7 +18,7 @@ actions:
         description: The SMTP login username
         multiline: false
         example: "example1@example.com"
-        required: true 
+        required: false 
         schema:
           type: string
       - name: password
